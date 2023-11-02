@@ -1,0 +1,15 @@
+function tested for part1:
+
+Tile class:
+    invalid and valid input:
+    init(1,12, 12 ,130) ===> returned valid Tile with id = 1, x = 12, y = 12, diameter  = 130
+
+Board class:
+    invalid and valid input:
+    init(600,600,60) ===> returned gird with expected rows and columns
+
+GameController class:
+    invalid and valid input:
+    passed in valid Game, Board Object ===> returned expected behavior 
+    when click on grid that alread had a tile ===> returned nothing happened to the UI
+    

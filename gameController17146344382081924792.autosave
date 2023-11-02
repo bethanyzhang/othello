@@ -1,0 +1,26 @@
+from game import Game
+
+
+class GameController:
+    def __init__(self, game):
+        self.game = game
+        self.current_color = "black"
+
+    def display_board(self):
+        self.game.board.display()
+
+    def make_move(self, tile_index, started):
+        if (self.game.steps_remaining == 0):
+            print("winner is: {}".format(self.game.winner))
+        if (self.game.tiles[tile_index].available):
+            if self.current_color == "white":
+                self.game.tiles[tile_index].display('white',False)
+                self.game.white_count += 1
+            else:
+                self.game.tiles[tile_index].display('black',False)
+                self.game.black_count += 1
+            self.game.steps_remaining -= 1
+
+        self.game.tiles[tile_index].display('white',False) if self.current_color == "white" else self.game.tiles[tile_index].display('black',False)
+        self.current_color = (
+            "white" if self.current_color == "black" else "black")
